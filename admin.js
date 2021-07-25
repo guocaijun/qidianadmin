@@ -515,6 +515,10 @@ app.get("/adminorders",checkislogin,function(req,res){
          res.render("AdminOrders/adminordersinfo",{data:results,islogin:req.session.loginname});
     })
  })
+//大飞开发的模块a
+app.get("/a",function(req,res){
+	res.render("a")
+})
  //退出
 app.get("/logout",function(req,res){
     req.session.loginname=''
