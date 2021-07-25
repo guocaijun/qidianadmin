@@ -1,0 +1,217 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    // Viewport Metatag
+    meta(name='viewport' content='width=device-width,initial-scale=1.0')
+    // Plugin Stylesheets first to ease overrides
+    link(rel='stylesheet' type='text/css' href='/b/plugins/colorpicker/colorpicker.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/custom-plugins/wizard/wizard.css' media='screen')
+    // Required Stylesheets
+    link(rel='stylesheet' type='text/css' href='/b/bootstrap/css/bootstrap.min.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/fonts/ptsans/stylesheet.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/fonts/icomoon/style.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/mws-style.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/icons/icol16.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/icons/icol32.css' media='screen')
+    // Demo Stylesheet
+    link(rel='stylesheet' type='text/css' href='/b/css/demo.css' media='screen')
+    // jQuery-UI Stylesheet
+    link(rel='stylesheet' type='text/css' href='/b/jui/css/jquery.ui.all.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/jui/jquery-ui.custom.css' media='screen')
+    // Theme Stylesheet
+    link(rel='stylesheet' type='text/css' href='/b/css/mws-theme.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/themer.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/my.css' media='screen')
+    title 
+        block title
+  body
+    // Header
+    #mws-header.clearfix
+      // Logo Container
+      #mws-logo-container
+        // Logo Wrapper, images put within this wrapper will always be vertically centered
+        #mws-logo-wrap
+          h2(style="color:white") 
+            a(href="/adminindex") 起点外卖后台
+      // User Tools (notifications, logout, profile, change password)
+      #mws-user-tools.clearfix
+        // Notifications
+        #mws-user-notif.mws-dropdown-menu
+          a.mws-dropdown-trigger(href='#' data-toggle='dropdown')
+            i.icon-exclamation-sign
+          // Unread notification count
+          span.mws-dropdown-notif 35
+          // Notifications dropdown
+          .mws-dropdown-box
+            .mws-dropdown-content
+              ul.mws-notifications
+                li.read
+                  a(href='#')
+                    span.message
+                      | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                    span.time
+                      | January 21, 2012
+                li.read
+                  a(href='#')
+                    span.message
+                      | Lorem ipsum dolor sit amet
+                    span.time
+                      | January 21, 2012
+                li.unread
+                  a(href='#')
+                    span.message
+                      | Lorem ipsum dolor sit amet
+                    span.time
+                      | January 21, 2012
+                li.unread
+                  a(href='#')
+                    span.message
+                      | Lorem ipsum dolor sit amet
+                    span.time
+                      | January 21, 2012
+              .mws-dropdown-viewall
+                a(href='#') View All Notifications
+        // Messages
+        #mws-user-message.mws-dropdown-menu
+          a.mws-dropdown-trigger(href='#' data-toggle='dropdown')
+            i.icon-envelope
+          // Unred messages count
+          span.mws-dropdown-notif 35
+          // Messages dropdown
+          .mws-dropdown-box
+            .mws-dropdown-content
+              ul.mws-messages
+                li.read
+                  a(href='#')
+                    span.sender John Doe
+                    span.message
+                      | Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
+                    span.time
+                      | January 21, 2012
+                li.read
+                  a(href='#')
+                    span.sender John Doe
+                    span.message
+                      | Lorem ipsum dolor sit amet
+                    span.time
+                      | January 21, 2012
+                li.unread
+                  a(href='#')
+                    span.sender John Doe
+                    span.message
+                      | Lorem ipsum dolor sit amet
+                    span.time
+                      | January 21, 2012
+                li.unread
+                  a(href='#')
+                    span.sender John Doe
+                    span.message
+                      | Lorem ipsum dolor sit amet
+                    span.time
+                      | January 21, 2012
+              .mws-dropdown-viewall
+                a(href='#') View All Messages
+        // User Information and functions section
+        #mws-user-info.mws-inset
+          // User Photo
+          #mws-user-photo
+            img(src='/b/example/profile.jpg' alt='User Photo')
+          // Username and Functions
+          #mws-user-functions
+            #mws-username
+              | 您好, #{islogin}
+            ul
+              li
+                a(href='/logout') 退出
+    // Start Main Wrapper
+    #mws-wrapper
+      // Necessary markup, do not remove
+      #mws-sidebar-stitch
+      #mws-sidebar-bg
+      // Sidebar Wrapper
+      #mws-sidebar
+        // Hidden Nav Collapse Button
+        #mws-nav-collapse
+          span
+          span
+          span
+        // Searchbox
+        // Main Navigation
+        #mws-navigation
+          ul
+            li
+              a(href='#')
+                i.icon-user
+                |  管理员管理
+              ul.closed
+                 li
+                  a(href='/adminadd') 管理员添加
+                  a(href='/adminuser') 管理员列表
+             li
+              a(href='#')
+                i.icon-users
+                |  用户管理
+              ul.closed
+                 li
+                  a(href='/adminusers') 用户列表
+            li
+              a(href='#')
+                i.icon-database
+                |  入驻商家管理
+              ul.closed
+                 li
+                  a(href='/adminshoplistadd') 商家添加
+                  a(href='/adminshoplist') 商家列表
+            li
+              a(href='#')
+                i.icon-coffee-2
+                |  商家食品管理
+              ul.closed
+                li
+                  a(href='/adminfoodslistadd') 食品添加
+                  a(href='/adminfoodslist') 食品列表
+            li
+              a(href='#')
+                i.icon-plane
+                |  订单管理
+              ul.closed
+                 li
+                  a(href='/adminorders') 订单列表
+      // Main Container Start
+      #mws-container.clearfix
+        .container
+            block admin
+          // Panels End
+          // footer
+          #mws-footer
+            | 起点外卖的后台
+      // Main Container End
+      // JavaScript Plugins
+      script(src='/b/js/libs/jquery-1.8.3.min.js')
+      script(src='/b/js/libs/jquery.mousewheel.min.js')
+      script(src='/b/js/libs/jquery.placeholder.min.js')
+      script(src='/b/custom-plugins/fileinput.js')
+      // jQuery-UI Dependent Scripts
+      script(src='/b/jui/js/jquery-ui-1.9.2.min.js')
+      script(src='/b/jui/jquery-ui.custom.min.js')
+      script(src='/b/jui/js/jquery.ui.touch-punch.js')
+      // Plugin Scripts
+      script(src='/b/plugins/datatables/jquery.dataTables.min.js')
+      //if lt IE 9
+        script(src='js/libs/excanvas.min.js')
+      script(src='/b/plugins/flot/jquery.flot.min.js')
+      script(src='/b/plugins/flot/plugins/jquery.flot.tooltip.min.js')
+      script(src='/b/plugins/flot/plugins/jquery.flot.pie.min.js')
+      script(src='/b/plugins/flot/plugins/jquery.flot.stack.min.js')
+      script(src='/b/plugins/flot/plugins/jquery.flot.resize.min.js')
+      script(src='/b/plugins/colorpicker/colorpicker-min.js')
+      script(src='/b/plugins/validate/jquery.validate-min.js')
+      script(src='/b/custom-plugins/wizard/wizard.min.js')
+      // Core Script
+      script(src='/b/bootstrap/js/bootstrap.min.js')
+      script(src='/b/js/core/mws.js')
+      // Themer Script (Remove if not needed)
+      script(src='/b/js/core/themer.js')
+      // Demo Scripts (remove if not needed)
+      script(src='/b/js/demo/demo.dashboard.js')
